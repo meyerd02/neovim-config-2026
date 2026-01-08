@@ -18,14 +18,22 @@ local opts = { silent = true, noremap = true }
 keymap('i', 'jk', '<Esc>', { noremap = true })
 
 -- Splits
-keymap('n', '|', ':split<cr>', opts)
 keymap('n', '<C-\\>', ':vsplit<cr>', opts)
-keymap('n', '<leader>sh', ':split<cr>', opts)
 keymap('n', '<leader>sv', ':vsplit<cr>', opts)
 
 -- Navigate splits
-keymap('n', 'sh', '<C-w>W', opts) -- Previous split
-keymap('n', 'sl', '<C-w>w', opts) -- Next split
+keymap('n', 'sh', '<C-w>h', opts) -- Left window
+keymap('n', 'sl', '<C-w>l', opts) -- Right window
+keymap('n', 'sj', '<C-w>j', opts) -- Down window
+keymap('n', 'sk', '<C-w>k', opts) -- Up window
+
+-- Navigate buffers
+keymap('n', '<leader>h', ':bprevious<cr>', { desc = 'Previous buffer' })
+keymap('n', '<leader>l', ':bnext<cr>', { desc = 'Next buffer' })
+
+-- Jump 20 lines up/down with Shift+j/k
+keymap('n', 'J', '20jzz', { desc = 'Jump 20 lines down' })
+keymap('n', 'K', '20kzz', { desc = 'Jump 20 lines up' })
 
 -- Keep Cursor Centered When Navigating Between Instances of Search Term
 keymap('n', 'n', 'nzzzv', opts)

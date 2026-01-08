@@ -13,6 +13,8 @@ You can read this file to see recent warnings and errors. The log includes:
 - Severity level (WARN/ERROR)
 - Error messages and notifications
 
+**Important:** When the user confirms an issue has been addressed, delete that specific error/warning entry from the log file to keep it clean and relevant.
+
 ### Useful Commands
 
 Within Neovim:
