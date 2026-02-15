@@ -14,6 +14,10 @@ local opts = { silent = true, noremap = true }
 
 -- Normal --
 
+-- Navigate by visual lines instead of actual lines
+keymap('n', 'j', 'gj', opts)
+keymap('n', 'k', 'gk', opts)
+
 -- Esc Insert Mode
 keymap('i', 'jk', '<Esc>', { noremap = true })
 
@@ -57,6 +61,10 @@ keymap('n', '<leader>w', ':w<cr>', opts)
 keymap('n', '<leader>W', ':wa<cr>', opts)
 
 -- Visual --
+-- Navigate by visual lines in visual mode too
+keymap('v', 'j', 'gj', opts)
+keymap('v', 'k', 'gk', opts)
+
 -- Stay in indent mode
 keymap('v', '<', '<gv', opts)
 keymap('v', '>', '>gv', opts)
@@ -76,6 +84,10 @@ keymap('n', '<leader>tp', ':tabp<CR>', { noremap = true })
 keymap('n', '<leader>tmp', ':-tabmove<CR>', { noremap = true })
 keymap('n', '<leader>tmn', ':+tabmove<CR>', { noremap = true })
 
+-- Comment toggle (cmd+/)
+keymap('n', '<D-/>', 'gcc', { desc = 'Toggle comment', remap = true })
+keymap('v', '<D-/>', 'gc', { desc = 'Toggle comment', remap = true })
+
 -- Telescope
 keymap('n', '<leader>ff', ':Telescope find_files<cr>', opts)
 keymap('n', '<leader>fs', ':Telescope live_grep<cr>', opts)
@@ -84,3 +96,4 @@ keymap('n', '<leader>fb', ':Telescope buffers<cr>', opts)
 keymap('n', '<leader>fn', ':Telescope notify<cr>', opts)
 keymap('n', '<leader>fh', ':Telescope harpoon marks<cr>', opts)
 keymap('n', '<leader>fr', ':Telescope resume<cr>', opts)
+keymap('n', '<leader>fc', ':Telescope colorscheme<cr>', { desc = '[F]ind [C]olorscheme' })
