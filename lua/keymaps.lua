@@ -31,10 +31,6 @@ keymap('n', 'sl', '<C-w>l', opts) -- Right window
 keymap('n', 'sj', '<C-w>j', opts) -- Down window
 keymap('n', 'sk', '<C-w>k', opts) -- Up window
 
--- Navigate buffers
-keymap('n', '<leader>h', ':bprevious<cr>', { desc = 'Previous buffer' })
-keymap('n', '<leader>l', ':bnext<cr>', { desc = 'Next buffer' })
-
 -- Jump 20 lines up/down with Shift+j/k
 keymap('n', 'J', '20jzz', { desc = 'Jump 20 lines down' })
 keymap('n', 'K', '20kzz', { desc = 'Jump 20 lines up' })
@@ -97,3 +93,4 @@ keymap('n', '<leader>fn', ':Telescope notify<cr>', opts)
 keymap('n', '<leader>fh', ':Telescope harpoon marks<cr>', opts)
 keymap('n', '<leader>fr', ':Telescope resume<cr>', opts)
 keymap('n', '<leader>fc', ':Telescope colorscheme<cr>', { desc = '[F]ind [C]olorscheme' })
+keymap('n', '<leader>fa', ':Telescope lsp_document_symbols<cr>', { desc = '[F]ind LSP Document Symbols' })
